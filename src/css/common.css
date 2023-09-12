@@ -64,3 +64,7 @@ img {
 .fb-v {
   flex-direction: column;
 }
+
+header {
+  padding: 15px;
+}
