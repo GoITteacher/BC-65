@@ -5,7 +5,8 @@
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /js-example/",
-    "push": "git add . && git commit -m 'update' && git push"
+    "push": "git add . && git commit -m 'update' && git push",
+    "server": "json-server --watch db.json"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,12 @@
   "bugs": {
     "url": "https://github.com/GoITteacher/js-template-practic/issues"
   },
-  "homepage": "https://github.com/GoITteacher/js-template-practic#readme"
+  "homepage": "https://github.com/GoITteacher/js-template-practic#readme",
+  "dependencies": {
+    "axios": "^1.5.0",
+    "parcel": "^2.9.3"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3"
+  }
 }

@@ -1,32 +1,31 @@
-import axios from 'axios';
-const axios2 = axios.create({
-  baseURL: 'http://localhost:3000',
-  headers: {},
+import axios2 from 'axios';
+
+const axios = axios2.create({
+  baseURL: 'http://localhost:3000/books',
+  headers: { test: 'hello', myKey: 'KUKU-KEY' },
+  params: {
+    key: '213132434234234',
+  },
 });
 
-export class BooksAPI {
-  async getBooks() {
-    try {
-      const response = await axios2.get('/books');
-      return response.data;
-    } catch {
-      return [];
-    }
+export class BooksApi {
+  getBooks() {
+    return axios.get().then(res => res.data);
   }
 
-  async createBook(book) {
-    const response = await axios2.post('/books', book);
-    return response.data;
+  createBook(book) {
+    return axios.post('', book).then(res => res.data);
   }
-  async updateBook(book, id) {
-    const response = await axios2.patch(`/books/${id}`, book);
-    return response.data;
+
+  updateBook({ id, ...book }) {
+    return axios.patch(`/${id}`, book);
   }
-  async resetBook(book, id) {
-    const response = await axios2.put(`/books/${id}`, book);
-    return response.data;
+
+  resetBook({ id, ...book }) {
+    return axios.put(`/${id}`, book).then(res => res.data);
   }
-  async deleteBook(id) {
-    return axios2.delete(`/books/${id}`);
+
+  deleteBook(id) {
+    return axios.delete(`/${id}`);
   }
 }

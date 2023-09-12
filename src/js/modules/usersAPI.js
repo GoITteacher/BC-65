@@ -1,22 +1,22 @@
-import axios from 'axios';
-const axios2 = axios.create({
-  baseURL: 'http://localhost:3000',
-  headers: {},
+import axios2 from 'axios';
+const axios = axios2.create({
+  baseURL: 'http://localhost:3000/users',
 });
 
 export class UsersAPI {
-  async getUsers() {
-    const response = await axios2.get('/users');
-    return response.data;
+  static getUsers() {
+    return axios.get().then(res => res.data);
   }
-
-  async createUser(user) {
-    const response = await axios2.post('/users', user);
-    return response.data;
+  static createUser(user) {
+    return axios.post('', user).then(res => res.data);
   }
-
-  async updateUser(user, userId) {
-    const response = await axios2.patch(`/users/${userId}`, user);
-    return response.data;
+  static updateUser({ id, ...user }) {
+    return axios.patch(`/${id}`, user).then(res => res.data);
+  }
+  static resetUser({ id, ...user }) {
+    return axios.put(`/${id}`, user).then(res => res.data);
+  }
+  static deleteUser(id) {
+    return axios.delete(`/${id}`, user);
   }
 }
