@@ -99,140 +99,88 @@
   ],
   "users": [
     {
-      "name": "Mercedes Weissnat",
-      "phone": "091-234-3434",
+      "name": "Erma Pacocha",
+      "phone": "366-695-8386",
+      "email": "Renee_Grimes79@yahoo.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/chaabane_wail_128.jpg",
       "id": 1
     },
     {
-      "name": "Linda Bartoletti",
-      "phone": "345-456-7678",
+      "name": "James Ondricka",
+      "phone": "300-357-6958",
+      "email": "Sadie83@yahoo.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/eddiechen_128.jpg",
       "id": 2
     },
     {
-      "name": "Rebecca Cremin",
-      "phone": "962-318-5188",
+      "name": "Harold Mante",
+      "phone": "515-934-4190",
+      "email": "Luella.Heller29@yahoo.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/namankreative_128.jpg",
       "id": 3
     },
     {
-      "name": "Kenny Ratke",
-      "phone": "335-292-3398",
+      "name": "Mr. Angelina Lynch",
+      "phone": "457-238-5739",
+      "email": "Sarah_Collier43@yahoo.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/lu4sh1i_128.jpg",
       "id": 4
     },
     {
-      "name": "Robin Yost",
-      "phone": "584-233-7047",
+      "name": "Ms. Danielle Schaefer",
+      "phone": "676-406-4378",
+      "email": "Charity.Conn16@yahoo.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/netonet_il_128.jpg",
       "id": 5
     },
     {
-      "name": "Miss Amy Gibson",
-      "phone": "358-235-9651",
+      "name": "Cheryl Kunze",
+      "phone": "430-676-9640",
+      "email": "Kennith_Rohan@hotmail.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/chatyrko_128.jpg",
       "id": 6
     },
     {
-      "name": "Dr. Felix Herman",
-      "phone": "519-480-4607",
+      "name": "Harvey Lehner",
+      "phone": "804-794-4790",
+      "email": "Ezequiel_Fritsch@gmail.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/michaelbrooksjr_128.jpg",
       "id": 7
     },
     {
-      "name": "Micheal Auer",
-      "phone": "758-416-3704",
+      "name": "Shawna Balistreri MD",
+      "phone": "408-201-0870",
+      "email": "Hilton.Green@gmail.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/vitor376_128.jpg",
       "id": 8
     },
     {
-      "name": "Owen Kassulke",
-      "phone": "537-903-5829",
+      "name": "Rita Gibson",
+      "phone": "686-982-0614",
+      "email": "Magnus.Nikolaus@gmail.com",
+      "avatar": "https://cdn.fakercloud.com/avatars/jamiebrittain_128.jpg",
       "id": 9
     },
     {
-      "name": "Alicia Cummerata V",
-      "phone": "981-617-3158",
+      "name": "Volodka",
+      "phone": "456-335-4567",
+      "email": "hjello@gmail.com",
+      "avatar": "test",
       "id": 10
     },
     {
-      "name": "Hugo Stanton",
-      "phone": "603-268-7470",
+      "name": "Max",
+      "phone": "245-345-45645",
+      "email": "andrii@gmail.com",
+      "avatar": "test",
       "id": 11
     },
     {
-      "name": "Caroline Marks",
-      "phone": "764-734-0139",
+      "name": "Roman",
+      "phone": "2334-345-546",
+      "email": "romantika@gmail.com",
+      "avatar": "test",
       "id": 12
-    },
-    {
-      "name": "Luke Marquardt",
-      "phone": "784-996-7288",
-      "id": 13
-    },
-    {
-      "name": "Miguel Predovic",
-      "phone": "928-421-0450",
-      "id": 14
-    },
-    {
-      "name": "Tracy White",
-      "phone": "631-933-5248",
-      "id": 15
-    },
-    {
-      "name": "Annette Deckow",
-      "phone": "341-292-4790",
-      "id": 16
-    },
-    {
-      "name": "Raul Grimes",
-      "phone": "992-397-3156",
-      "id": 17
-    },
-    {
-      "name": "Hope Schultz",
-      "phone": "856-892-1806",
-      "id": 18
-    },
-    {
-      "name": "Milton Sanford",
-      "phone": "393-490-8006",
-      "id": 19
-    },
-    {
-      "name": "Dr. Russell Konopelski",
-      "phone": "760-656-5652",
-      "id": 20
-    },
-    {
-      "name": "Michael Jaskolski",
-      "phone": "700-856-3088",
-      "id": 21
-    },
-    {
-      "name": "Stacey Klocko",
-      "phone": "230-392-3278",
-      "id": 22
-    },
-    {
-      "name": "Raul Cruickshank",
-      "phone": "286-552-9218",
-      "id": 23
-    },
-    {
-      "name": "Jose Hauck",
-      "phone": "386-700-3033",
-      "id": 24
-    },
-    {
-      "name": "Merle Beatty",
-      "phone": "827-200-7313",
-      "id": 25
-    },
-    {
-      "name": "Dr. Sylvester Anderson",
-      "phone": "342-547-8767",
-      "id": 26
-    },
-    {
-      "name": "Lynne Davis",
-      "phone": "722-578-4723",
-      "id": 27
     }
-  ],
-  "rooms": []
+  ]
 }
