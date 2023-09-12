@@ -1,4 +1,4 @@
-import { NewsAPI } from './modules/newsApi';
+import { NewsAPI } from './modules/newsApi2';
 
 const newsApi = new NewsAPI();
 let maxPage = 1;
@@ -18,7 +18,7 @@ function onFormSubmit(e) {
   newsApi.page = 1;
   newsApi.getArticles().then(data => {
     refs.articleListElem.innerHTML = '';
-    maxPage = Math.ceil(data.totalResults / newsApi.pageSize);
+    maxPage = data.total_pages;
     renderArticles(data.articles);
     observer.observe(refs.targetElem);
     updateStatusObserver();
@@ -54,29 +54,23 @@ function updateStatusObserver() {
   }
 }
 
-function templateArticle({
-  author,
-  title,
-  description,
-  urlToImage,
-  publishedAt,
-}) {
+function templateArticle({ author, title, summary, media, published_date }) {
   return `
     <li class="card news-card">
           <img loading="lazy"
             class="news-image"
-            src="${urlToImage}"
+            src="${media}"
             alt="${title}"
           />
           <h3 class="card-title">
             ${title}
           </h3>
           <p class="card-desc">
-          ${description}
+          ${summary}
           </p>
           <div class="card-footer">
             <span>${author}</span>
-            <span>${publishedAt}</span>
+            <span>${published_date}</span>
           </div>
         </li>`;
 }

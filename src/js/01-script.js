@@ -44,6 +44,7 @@ function templateArticle({
   author,
   title,
   description,
+  content,
   urlToImage,
   publishedAt,
 }) {
