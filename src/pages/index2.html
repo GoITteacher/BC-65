@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -11,18 +11,22 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/common.css">
-</head>
-<body>
+    <link rel="stylesheet" href="../css/common.css" />
+  </head>
+  <body>
+    <div class="header">
+      <form class="form-inline search-form js-search-form">
+        <div class="form-group">
+          <input type="text" class="form-control" name="query" />
+        </div>
 
-    <ul class="news-list js-jobs-list">
-    </ul>
-
-    <div>
-      <button class="btn btn-primary js-btn-prev" disabled="true">Prev</button>
-      <button class="btn btn-primary js-btn-next" disabled="true">Next</button>
+        <button type="submit" class="btn btn-primary">Искать</button>
+      </form>
     </div>
 
-    <script src="../js/index2.js" type="module"></script>
-</body>
+    <ul class="news-list js-article-list"></ul>
+    <div class="js-target"></div>
+
+    <script src="../js/02-scroll.js" type="module"></script>
+  </body>
 </html>
