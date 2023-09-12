@@ -1,6 +1,6 @@
 const refs = {
   formEl: document.querySelector('.js-search-form[data-id="5"]'),
-  cartEl: document.querySelector('.js-pokemon-cart'),
+  listEl: document.querySelector('.js-pokemon-list'),
 };
 
 refs.formEl.addEventListener('submit', onFormElSubmit);
@@ -22,16 +22,24 @@ function renderPokemon({
   weight,
   id,
   name,
-  sprites: { front_default },
+  base_experience,
+  sprites: { front_default, back_default },
 }) {
-  const markup = `
-    <h1>${name}</h1>
-    <p>Number: ${id}</p>
-    <p>Height: ${height} m</p>
-    <p>Weight: ${weight} kg</p>
-    <img
-      src="${front_default}"
-      alt="${name}"
-    />`;
-  refs.cartEl.innerHTML = markup;
+  const markup = `<div class="pokemon-card pokemon-item">
+  <h1 class="pokemon-name">${name} - Pokemon Details</h1>
+  <img data-back="${back_default}" data-front="${front_default}"
+    class="pokemon-image js-pocimage"
+    src="${front_default}"
+    alt="${name}"
+  />
+
+  <h2 class="section-title">Basic Information</h2>
+  <ul class="info-list">
+    <li>ID: ${id}</li>
+    <li>Height: ${height} decimetres</li>
+    <li>Weight: ${weight} grams</li>
+    <li>Base Experience: ${base_experience}</li>
+  </ul>
+</div>`;
+  refs.listEl.insertAdjacentHTML('beforeend', markup);
 }
