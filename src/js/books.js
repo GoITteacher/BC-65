@@ -1,4 +1,5 @@
-import { BooksApi } from './modules/booksAPI';
+import '../css/common.css';
+import { BooksAPI } from './modules/booksAPI';
 // ===================================================
 
 const refs = {
@@ -8,7 +9,7 @@ const refs = {
   deleteFormElem: document.querySelector('.js-delete-form'),
   bookListElem: document.querySelector('.js-article-list'),
 };
-const booksAPI = new BooksApi();
+const booksAPI = new BooksAPI();
 // ===================================================
 refs.createFormElem.addEventListener('submit', onBookCreate);
 refs.updateFormElem.addEventListener('submit', onBookUpdate);

@@ -1,3 +1,4 @@
+import '../css/common.css';
 import { UsersAPI } from './modules/usersAPI';
 
 const refs = {
