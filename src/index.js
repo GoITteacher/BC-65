@@ -99,15 +99,38 @@ let x = 'helle';
 // const y = x.split('').reverse().join('');
 // console.log(x === y);
 
-x = x.toLowerCase();
-for (let i = 0; i < Math.floor(x.length / 2); i++) {
-  const left = i;
-  const right = x.length - i - 1;
+// x = x.toLowerCase();
+// for (let i = 0; i < Math.floor(x.length / 2); i++) {
+//   const left = i;
+//   const right = x.length - i - 1;
 
-  const leftSymbol = x[left];
-  const rightSymbol = x[right];
-  if (leftSymbol !== rightSymbol) {
-    console.log('Isnt polindrom');
-    break;
-  }
-}
+//   const leftSymbol = x[left];
+//   const rightSymbol = x[right];
+//   if (leftSymbol !== rightSymbol) {
+//     console.log('Isnt polindrom');
+//     break;
+//   }
+// }
+
+// ======================
+
+// Фібоначчі
+// Класичне завдання, яке можна зустріти на співбесідах різного рівня. Послідовність Фібоначчі - це ряд чисел, де кожне наступне є сумою двох попередніх. Так, перші десять чисел виглядають так: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34.
+
+// Постановка
+// Потрібно написати функцію, яка повертає n-ний запис у певній послідовності, причому n - число, яке передається як аргумент функції.
+
+// function fibba(n) {
+//   if (n < 2) {
+//     return 1;
+//   }
+
+//   return fibba(n - 1) + fibba(n - 2);
+// }
+
+// console.log(fibba(0));
+// console.log(fibba(1));
+// console.log(fibba(2));
+// console.log(fibba(3));
+
+// =========
