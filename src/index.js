@@ -86,10 +86,28 @@ const max = 10;
 // 0 1 2 3 4 5 6 7 8 9 10
 // 55 / 11 = 5;
 
-let total = 0;
+// let total = 0;
 
-for (let i = min; i <= max; i += 1) {
-  total += i / (max - min + 1);
+// for (let i = min; i <= max; i += 1) {
+//   total += i / (max - min + 1);
+// }
+
+// console.log(total);
+// ====================
+
+let x = 'helle';
+// const y = x.split('').reverse().join('');
+// console.log(x === y);
+
+x = x.toLowerCase();
+for (let i = 0; i < Math.floor(x.length / 2); i++) {
+  const left = i;
+  const right = x.length - i - 1;
+
+  const leftSymbol = x[left];
+  const rightSymbol = x[right];
+  if (leftSymbol !== rightSymbol) {
+    console.log('Isnt polindrom');
+    break;
+  }
 }
-
-console.log(total);
