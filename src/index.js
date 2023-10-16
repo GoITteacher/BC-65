@@ -124,7 +124,6 @@ let x = 'helle';
 //   if (n < 2) {
 //     return 1;
 //   }
-
 //   return fibba(n - 1) + fibba(n - 2);
 // }
 
