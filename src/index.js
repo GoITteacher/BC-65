@@ -135,21 +135,102 @@ console.log(arrUser(users, 'emai1@gmail.com')); */
 /* 
 Створіть функцію, яка приймає об'єкт і рядок (ім'я властивості). Функція повинна повертати true, якщо така властивість існує у об'єкті, і false, якщо ні. 
 */
-const users = [
-  { name: 'name1', email: 'email1@gmail.com' },
-  { name: 'name2', email: 'email2@gmail.com', age: 12 },
-  { name: 'name3', email: 'email3@gmail.com' },
-  { name: 'name4', email: 'email4@gmail.com' },
-  { name: 'name5', email: 'email5@gmail.com' },
-  { name: 'name6', email: 'email6@gmail.com' },
-];
 
 // function hasProperty(object, message) {
 //   return object.hasOwnProperty(message);
 // }
 
-function hasProperty(object, message) {
-  return Object.keys(object).includes(message);
+// function hasProperty(object, message) {
+//   return Object.keys(object).includes(message);
+// }
+
+// console.log(hasProperty(users[1], 'age'));
+
+// ==================
+
+/* 
+Створіть функцію, яка приймає два об'єкти і об'єднує їх в один новий об'єкт. Якщо властивості в об'єктів конфліктують, використовуйте значення з другого об'єкта.
+*/
+
+// function concatObj(obj1, obj2) {
+//   const obj = { ...obj2, ...obj1 };
+//   console.log(obj);
+// }
+
+/* 
+Створіть функцію, яка приймає об'єкт і перевіряє, чи є він пустим (не має жодних властивостей). Функція повинна повертати true, якщо об'єкт пустий, і false, якщо він має хоча б одну властивість.
+*/
+
+// function isEmpty(obj) {
+//   console.log(Object.keys(obj));
+//   return Object.keys(obj).length === 0; // false
+// }
+// isEmpty({ x: 1 });
+
+// =============
+
+/* 
+Створіть функцію, яка приймає масив об'єктів та властивість (наприклад, "ім'я") і значення. Функція повинна повертати перший об'єкт із масиву, в якому вказана властивість має задане значення, або null, якщо немає відповідного об'єкта.
+*/
+// const users = [
+//   { 'name': 'name1', 'email': 'email1@gmail.com'},
+//   { name: 'name2', email: 'email2@gmail.com', age: 12 },
+//   { name: 'name3', email: 'email3@gmail.com' },
+//   { name: 'name4', email: 'email4@gmail.com' },
+//   { name: 'name5', email: 'email5@gmail.com' },
+//   { name: 'name6', email: 'email6@gmail.com' },
+// ];
+
+// function findObj(array, key, value) {
+//   for (const elem of array) {
+//     Object.values(elem).includes(value);
+//     if (elem[key] === value) {
+//       return elem;
+//     }
+//   }
+//   return null;
+// }
+
+// const result = findObj(users, '');
+// console.log(result);
+// ==================
+
+// const myObj = {
+//   toString() {
+//     return 'mYkey';
+//   },
+// };
+
+// const objA = {
+//   ['']: 'Hello world',
+// };
+// console.log(objA);
+
+// objA[[10, 20, 30, 40]] = 'Hello world';
+// console.log(objA);
+
+// ==================
+
+/* 
+Створіть функцію, яка приймає масив об'єктів, кожен з яких містить числову властивість (наприклад, "вік"). Функція повинна обчислювати середнє значення цієї властивості для всіх об'єктів у масиві і повертати його. 
+*/
+function averageValueOfArray(array) {
+  let total = 0;
+  for (const value of array) {
+    total += value.speed;
+  }
+  let result = total / array.length;
+  console.log(+result.toFixed(2));
 }
 
-console.log(hasProperty(users[1], 'age'));
+const cars = [
+  { model: '', speed: 290 },
+  { model: '', speed: 220 },
+  { model: '', speed: 240 },
+  { model: '', speed: 390 },
+  { model: '', speed: 320 },
+  { model: '', speed: 350 },
+  { model: '', speed: 260 },
+];
+
+averageValueOfArray(cars);
