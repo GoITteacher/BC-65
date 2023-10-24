@@ -4,11 +4,6 @@
 1. Найти авто зеленого цвета
 1. Найти все спорткары
 1. Посчитать количество авто 2022 года
-1. Отсортировать машини по цене
-1. Найти все машины с ценой выше 50000.
-1. Найти все машины красного цвета.
-1. Найти все машины, которые являются спортивными.
-1. Посчитать количество машин 2022 года.
 1. Отсортировать машины по году выпуска (от самого старого до самого нового).
 1. Найти самую дорогую машину.
 1. Найти все машины заданной марки (например, Toyota).
@@ -101,6 +96,7 @@ const cars = [
     amount: 14,
     price: 24045,
     onSale: true,
+    year: 2000,
   },
   {
     make: 'Honda',
@@ -109,6 +105,7 @@ const cars = [
     amount: 2,
     price: 22455,
     onSale: true,
+    year: 2000,
   },
   {
     make: 'Mazda',
@@ -117,6 +114,7 @@ const cars = [
     amount: 8,
     price: 24195,
     onSale: false,
+    year: 2000,
   },
   {
     make: 'Mazda',
@@ -125,6 +123,7 @@ const cars = [
     amount: 7,
     price: 31520,
     onSale: true,
+    year: 2000,
   },
   {
     make: 'Toyota',
@@ -133,6 +132,7 @@ const cars = [
     amount: 19,
     price: 34210,
     onSale: false,
+    year: 2000,
   },
   {
     make: 'Toyota',
@@ -141,6 +141,7 @@ const cars = [
     amount: 16,
     price: 45560,
     onSale: false,
+    year: 2000,
   },
   {
     make: 'Toyota',
@@ -149,6 +150,7 @@ const cars = [
     amount: 4,
     price: 24320,
     onSale: true,
+    year: 2000,
   },
   {
     make: 'Ford',
@@ -157,6 +159,7 @@ const cars = [
     amount: 11,
     price: 27110,
     onSale: true,
+    year: 2000,
   },
   {
     make: 'Ford',
@@ -165,6 +168,7 @@ const cars = [
     amount: 13,
     price: 22120,
     onSale: true,
+    year: 2000,
   },
   {
     make: 'Ford',
@@ -173,6 +177,7 @@ const cars = [
     amount: 6,
     price: 31660,
     onSale: false,
+    year: 2000,
   },
 ];
 const users = [
