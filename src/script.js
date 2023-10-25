@@ -460,14 +460,16 @@ console.table(task2(cars, 'sedan')); */
 
 // console.table(task8(cars));
 
-const task9 = cars => {
-  return cars.every(car => {
-    return car.onSale;
-  });
-};
+// const task9 = cars => {
+//   return cars.every(car => {
+//     return car.onSale;
+//   });
+// };
 
-const task10 = cars => {
-  return cars.every(car => car.price);
-};
+// const task10 = cars => {
+//   return cars.every(car => car.price);
+// };
 
 // console.log(task9(cars));
+
+// =====================
