@@ -1,10 +1,11 @@
-let f = function () {
-  this.x = 5;
-};
+// let f = function () {
+//   this.x = 5;
+//   this.hello = 'Hello World';
+// };
 
-const obj = {
-  foo: f,
-};
+// const obj = {
+//   foo: f,
+// };
 
-obj.foo();
-console.log(obj);
+// obj.foo();
+// console.log(obj);

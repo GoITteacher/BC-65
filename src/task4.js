@@ -1,9 +1,15 @@
 function f() {
   const foo = () => {
     function test() {
+      //this = obj
       console.log(this);
     }
-    test();
+
+    const user = {
+      show: test, // show = test
+    };
+
+    user.show.call(obj);
   };
 
   return foo;
