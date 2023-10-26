@@ -1,4 +1,4 @@
----
+# Tasks
 
 Класс Calculator: Реализуйте класс Calculator, который будет иметь методы для
 основных математических операций: add, subtract, multiply, и divide. Каждый
