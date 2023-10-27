@@ -372,3 +372,80 @@ const cars = [
       year: 2000,
     },
   */
+
+/* 
+Перевірте, чи всі автомобілі даної марки доступні для продажу та поверніть масив, що містить лише кольори доступних автомобілів.*/
+
+function task1(model) {
+  return cars
+    .filter(car => car.model === model && car.onSale)
+    .map(car => car.price)
+    .filter((price, i, arr) => i === arr.indexOf(price));
+}
+
+// console.log(task1('CR-V'));
+
+/* 
+Знайдіть усі автомобілі, у яких кількість на складі більше 0, відсортуйте їх спадає за кількістю та повертає масив, що містить лише марки та моделі ці автомобілі.
+*/
+
+// filter sort map
+
+function task13() {
+  return [...cars]
+    .filter(car => car.amount > 0)
+    .sort((b, a) => a.amount - b.amount)
+    .map(car => {
+      const newObj = {
+        make: car.make,
+        model: car.model,
+      };
+      return newObj;
+    });
+}
+
+/*  
+Знайдіть індекс першого автомобіля з ціною менше 20000 і поверніть масив, що містить лише марки та моделі автомобілів після знайденого.
+*/
+
+function task4() {
+  const index = cars.findIndex(car => car.price > 35000);
+  return cars
+    .filter((car, idx) => idx > index)
+    .map(car => {
+      const newObj = {
+        make: car.make,
+        model: car.model,
+      };
+      return newObj;
+    });
+}
+
+// console.log(task4());
+/* 
+Обчисліть загальну кількість автомобілів заданого рік та поверніть новий масив, містить предмети з моделями та відповідними price автомобілів.*/
+
+function task99(findYear) {
+  const Arr = cars
+    .filter(car => {
+      return car.year === findYear;
+    })
+    .map(car => {
+      return {
+        model: car.model,
+        price: car.price,
+      };
+    });
+  console.log(Arr.length);
+  return Arr;
+}
+console.log(task99(2022));
+
+/* 
+Знайдіть усі автомобілі з ціною від 40 000 до 60 000, відсортуйте їх за роками випускає від нового до старого та повертає масив, що містить лише моделі цих машин. */
+/* 
+Перевірте, чи є принаймні одна машина з кількістю на складі більше 5 і ціною вище 70 000.
+ */
+/* 
+Знайдіть усі автомобілі, у яких кількість на складі більше 0, відсортуйте їх спадає за кількістю та повертає масив, що містить лише марки та моделі ці автомобілі.
+ */
