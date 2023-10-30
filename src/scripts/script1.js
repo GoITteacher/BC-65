@@ -116,4 +116,23 @@ const carElements = document.querySelectorAll('tbody>tr');
 for (let i = 0; i < carElements.length; i += 2) {
   carElements[i].classList.add('odd');
 }
-// =========================
+// =====================================
+
+// function totalElement() {
+//   const carsOnSale = document.querySelectorAll('.on-sale');
+//   const markupAmountCar = `<p>Total amount cars on sale - ${carsOnSale.length}</p>`;
+//   tableCarsElem.insertAdjacentHTML('afterend', markupAmountCar);
+// }
+
+/* function totalElement() {
+  const carsOnSale = document.querySelectorAll('.on-sale');
+  let total = 0;
+
+  for (let elem of carsOnSale) {
+    total += Number(elem.children[3].textContent);
+  }
+  const markupAmountCar = `<p>Total amount cars on sale - ${total}</p>`;
+  tableCarsElem.insertAdjacentHTML('afterend', markupAmountCar);
+}
+
+totalElement(); */
