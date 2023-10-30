@@ -232,3 +232,75 @@ const users = [
   },
 ];
 // ====================
+
+/* 
+{
+    id: 1,
+    name: 'Leanne Graham',
+    username: 'Bret',
+    email: 'Sincere@april.biz',
+    address: {
+      street: 'Kulas Light',
+      suite: 'Apt. 556',
+      city: 'Gwenborough',
+      zipcode: '92998-3874',
+      geo: {
+        lat: '-37.3159',
+        lng: '81.1496',
+      },
+    },
+    phone: '1-770-736-8031 x56442',
+    website: 'hildegard.org',
+    company: {
+      name: 'Romaguera-Crona',
+      catchPhrase: 'Multi-layered client-server neural-net',
+      bs: 'harness real-time e-markets',
+    },
+  }
+*/
+
+/* function userTemplate(user) {
+  const {
+    name,
+    phone,
+    address: { city },
+  } = user;
+  return `
+  <li class="user-card">
+        <p>Name: ${name}</p>
+        <p>Phone: ${phone}</p>
+        <p>City: ${city}</p>
+  </li>
+  `;
+}
+
+function usersTemplate(usersArr) {
+  return usersArr.map(userTemplate).join('');
+}
+
+function usersRender(usersArr) {
+  const usersList = document.querySelector('.js-list-users');
+  usersList.insertAdjacentHTML('afterbegin', usersTemplate(usersArr));
+} */
+
+// usersRender(users);
+// ==========================
+
+/* function userTemplate(user) {
+  const element = document.createElement('li');
+  element.textContent = `${user.name}`;
+  element.classList.add('user-card');
+  return element;
+}
+
+function usersTemplate(users) {
+  return users.map(userTemplate);
+}
+
+function renderUsers(users) {
+  const usersList = document.querySelector('.js-list-users');
+  const userList = usersTemplate(users);
+  usersList.append(...userList);
+}
+
+renderUsers(users); */

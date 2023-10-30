@@ -80,3 +80,40 @@ const cars = [
     onSale: false,
   },
 ];
+
+const tableCarsElem = document.querySelector('.js-table-cars');
+const tbodyElem = tableCarsElem.lastElementChild;
+
+function carTemplate(car) {
+  const { make, model, type, amount, price, onSale } = car;
+
+  return `
+<tr class="${onSale ? 'on-sale' : 'not-sale'}">
+  <td>${make}</td>
+  <td>${model}</td>
+  <td>${type}</td>
+  <td style="text-align: center">${amount}</td>
+  <td>${price}</td>
+  <td>${onSale}</td>
+  <td>${price * amount}</td>
+</tr>`;
+}
+
+function carsTemplate(carsArr) {
+  return carsArr.map(carTemplate).join('\n\n');
+}
+
+function renderCars(carsArr) {
+  const markup = carsTemplate(carsArr);
+  tbodyElem.insertAdjacentHTML('afterbegin', markup);
+}
+
+renderCars(cars);
+
+// =========================
+
+const carElements = document.querySelectorAll('tbody>tr');
+for (let i = 0; i < carElements.length; i += 2) {
+  carElements[i].classList.add('odd');
+}
+// =========================
