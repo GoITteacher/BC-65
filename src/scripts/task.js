@@ -1,10 +1,10 @@
-class Tasks {
+class TaskManager {
   static count = 0;
   taskList = [];
 
   createTask(title, description, priority, status) {
     const task = {
-      id: Tasks.count++,
+      id: TaskManager.count++,
       title,
       description,
       priority,
