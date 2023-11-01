@@ -4,10 +4,6 @@ body.show-modal .backdrop {
   pointer-events: initial;
 }
 
-body.show-modal .modal {
-  transform: scale(1);
-}
-
 .backdrop {
   padding: 100px;
   display: flex;
