@@ -2,15 +2,17 @@ class TaskManager {
   static count = 0;
   taskList = [];
 
-  createTask(title, description, priority, status) {
+  createTask(title, description, priority) {
     const task = {
       id: TaskManager.count++,
       title,
       description,
       priority,
-      status,
+      image:
+        'https://blog.logrocket.com/wp-content/uploads/2023/01/css-full-page-background.png',
     };
     this.taskList.push(task);
+    return task;
   }
 
   removeTask(id) {
