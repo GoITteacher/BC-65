@@ -21,3 +21,26 @@
 //     console.log(e.target.value);
 //   }, 300),
 // );
+
+// ===========================================================
+
+const form = {
+  innerHTML: '',
+  textContent: '',
+  children: [],
+  firstElementChild: '',
+  elements: {
+    myInput: {
+      value: '',
+    },
+  },
+};
+
+form.addEventListener('submit', e => {
+  e.target.elements.myInput.value;
+});
+
+input.addEventListener('input', e => {
+  e.target.value;
+  console.log(e.target);
+});
