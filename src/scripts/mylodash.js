@@ -44,3 +44,7 @@ input.addEventListener('input', e => {
   e.target.value;
   console.log(e.target);
 });
+
+/* 
+    <img src="....." alt="..." data-source="..." data-test="">
+*/
