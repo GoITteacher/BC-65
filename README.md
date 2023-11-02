@@ -1,5 +1,3 @@
-<li class="user-item" data-id="${id}">${name}</li>
-
 <li class="album box" data-id=${el.id}>${el.title}</li>
 
 <img class="lazyload blur-up" src="https://upload.wikimedia.org/wikipedia/ru/7/77/Pikachu.png" data-src="https://source.unsplash.com/500x500/?random=${element.id}&user,car,bird,cat,dog"/>

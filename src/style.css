@@ -122,12 +122,21 @@ li {
 .blur-up {
   -webkit-filter: blur(5px);
   border: 5px solid red;
+  border-radius: 50%;
+  filter: blur(5px);
+  transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.blur-up.lazyloading {
+  -webkit-filter: blur(5px);
+  border: 5px solid rgb(51, 0, 255);
   filter: blur(5px);
   transition: filter 400ms, -webkit-filter 400ms;
 }
 
 .blur-up.lazyloaded {
   -webkit-filter: blur(0);
+  border-radius: 15px;
   filter: blur(0);
   border: none;
 }
