@@ -10,31 +10,29 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.css"
+      integrity="sha512-C+KPK958JmUdU8B9SVr8YpEZtQ1T1XrFX/OLvE/lt336DFWXFHL5Y9/tUewMEU+Uy3dUAS363XXLdBine0WDyQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="modal.css" />
     <title>EXAMPLE</title>
   </head>
   <body>
-    <a href="./delegations.html">Delegations</a>
+    <button class="js-show-modal">SHOW MODAL</button>
 
-    <form class="js-form box form">
-      <input type="text" name="my-text" class="js-input form-control" /><br />
-      <button type="submit form-control btn btn-primary">Send</button>
-    </form>
-    <input class="js-input-text" type="text" />
-    <ul class="js-album-list"></ul>
+    <div class="js-modal">
+      <div class="modal-box"><h1>My MOdal</h1></div>
+    </div>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"
-      integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/basicLightbox/5.0.0/basicLightbox.min.js"
+      integrity="sha512-jIc3kBeyfyLXBTmzUIXnbGiVK2wgWGcDIkJwkFW4bQ6v2h/piOKLwIfy3wOmKHWIu8DgYSKVth0DMUvExMYcOw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-
-    <form action="">
-      <input type="text" />
-      <textarea name="myInput" id="" cols="30" rows="10"></textarea>
-    </form>
-
-    <script src="./scripts/mylodash.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

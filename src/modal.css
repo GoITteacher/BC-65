@@ -43,3 +43,14 @@ body.show-modal .modal {
   transform: scale(1.1);
   transition: transform 200ms ease-in-out;
 }
+
+.modal-box {
+  width: 50vw;
+  height: 50vh;
+  border-radius: 15px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
