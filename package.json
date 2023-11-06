@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-example/",
+    "start": "npx parcel src/*.html",
     "push": "git add . && git commit -m 'update' && git push"
   },
   "repository": {
@@ -19,7 +18,9 @@
   },
   "homepage": "https://github.com/GoITteacher/js-template-practic#readme",
   "dependencies": {
+    "@vimeo/player": "^2.20.1",
     "lodash": "^4.17.21",
+    "parcel": "^2.10.2",
     "simplelightbox": "^2.14.2"
   }
 }
