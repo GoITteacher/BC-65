@@ -1,48 +1,48 @@
-import { loadFromLS, saveToLS } from './helpers';
+import { saveToLs, loadFromLS } from './helpers';
 
 const refs = {
-  formElem1: document.querySelector('.js-form1'),
-  formElem2: document.querySelector('.js-form2'),
-  formElem3: document.querySelector('.js-form3'),
-  formContainer: document.querySelector('.js-form-container'),
+  formElem: document.querySelector('.js-form1'),
 };
 
-function onLoad() {
-  refs.formElem3.elements.name.value = loadFromLS('name') || '';
-  refs.formElem3.elements.bio.value = loadFromLS('bio') || '';
-  refs.formElem3.elements.password.value = loadFromLS('password') || '';
+refs.formElem.addEventListener('input', onFormElemInput);
+
+function onFormElemInput(evt) {
+  const userForm = {};
+  // userForm.userName = refs.formElem.elements.name.value;
+  // userForm.userBio = refs.formElem.elements.bio.value;
+  // userForm.userPassword = refs.formElem.elements.password.value;
+
+  const formData = new FormData(refs.formElem);
+
+  formData.forEach((value, key) => {
+    userForm[key] = value;
+  });
+
+  saveToLs('userData', userForm);
 }
 
-onLoad();
+function onLoad() {
+  const data = loadFromLS('userData') || {};
 
-refs.formElem3.addEventListener('submit', e => {
+  // refs.formElem.elements.name.value = data.name;
+  // refs.formElem.elements.bio.value = data.bio;
+  // refs.formElem.elements.password.value = data.password;
+
+  // ['name', 'bio','password']
+  for (const key of Object.keys(data)) {
+    refs.formElem.elements[key].value = data[key];
+  }
+}
+
+function onFormElemSubmit(e) {
   e.preventDefault();
-  localStorage.clear();
-  const formData = new FormData(e.target);
 
-  const objData = {};
-
-  for (let [key, value] of formData) {
-    objData[key] = value;
-  }
-
-  console.log(objData);
+  const data = loadFromLS('userData');
+  localStorage.removeItem('userData');
   e.target.reset();
-});
+  console.log(data);
+}
 
-refs.formElem3.addEventListener('input', e => {
-  saveToLS(e.target.name, e.target.value);
-});
+refs.formElem.addEventListener('submit', onFormElemSubmit);
 
-refs.formContainer.addEventListener('input', () => {
-  const formData = new FormData(e.target);
-  const objData = {};
-  for (let [key, value] of formData) {
-    objData[key] = value;
-  }
-
-  const form = e.target.closest('form');
-
-  console.log(form);
-  saveToLS('');
-});
+onLoad();
