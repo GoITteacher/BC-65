@@ -1,4 +1,3 @@
-import { Bank } from './Bank.js';
 import { loadFromLS, saveToLS } from './helpers';
 
 const refs = {
