@@ -4,7 +4,7 @@ const refs = {
   clockface: document.querySelector('.js-clockface'),
 };
 
-class Stopwatch {}
+const stopwatch = {};
 
 /* 
 getTimeComponents(time) {
