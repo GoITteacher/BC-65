@@ -4,19 +4,19 @@
 
 ```js
 setTimeout(function timeout() {
-  console.log('Таймаут');
+  console.log('1');
 }, 0);
 
 let p = new Promise(function (resolve, reject) {
-  console.log('Создание промиса');
+  console.log('2');
   resolve();
 });
 
 p.then(function () {
-  console.log('Обработка промиса');
+  console.log('3');
 });
 
-console.log('Конец скрипта');
+console.log('4');
 ```
 
 ---
