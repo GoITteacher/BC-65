@@ -1,28 +1,27 @@
-const refs = {
-  formEl: document.querySelector('.js-search-form[data-id="2"]'),
-  infoEl: document.querySelector('.js-binance-info'),
-};
+const formEl = document.querySelector('.js-search-form[data-id="2"]');
+const infoEl = document.querySelector('.js-binance-info');
 
-refs.formEl.addEventListener('submit', e => {
-  e.preventDefault();
+formEl.addEventListener('submit', onFormSubmit);
 
-  const value = e.target.elements.query.value.trim();
+function onFormSubmit(event) {
+  event.preventDefault();
 
-  getPrice(value)
-    .then(data => {
-      renderPrice(data);
-    })
-    .catch(err => {
-      console.log('Don`t worry', err.message);
-    });
-});
-
-function getPrice(userValue) {
-  const BASE_URL = 'https://binance43.p.rapidapi.com/ticker/price';
-  const PARAMS = new URLSearchParams({
-    symbol: userValue,
+  const userValue = event.target.elements.query.value;
+  getPrice(userValue).then(data => {
+    infoEl.innerHTML = priceMarkup(data);
   });
-  const url = `${BASE_URL}?${PARAMS}`;
+}
+
+function priceMarkup({ symbol, price }) {
+  return `<span>${symbol}</span>
+  <span>${(+price).toFixed(2)}</span>`;
+}
+
+function getPrice(symbol) {
+  const BASE_URL = 'https://binance43.p.rapidapi.com';
+  const END_POINT = '/ticker/price';
+  const PARAMS = `?symbol=${symbol}`;
+  const url = `${BASE_URL}${END_POINT}${PARAMS}`;
 
   const options = {
     headers: {
@@ -31,19 +30,5 @@ function getPrice(userValue) {
     },
   };
 
-  return fetch(url, options).then(res => {
-    if (!res.ok) {
-      throw new Error('Error');
-    } else {
-      return res.json();
-    }
-  });
-}
-
-function renderPrice({ symbol, price }) {
-  const markup = `
-    <span>${symbol}</span>
-    <span>${Number.parseInt(price)}</span>`;
-
-  refs.infoEl.innerHTML = markup;
+  return fetch(url, options).then(res => res.json());
 }

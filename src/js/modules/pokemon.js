@@ -1,31 +1,34 @@
-const refs = {
-  formEl: document.querySelector('.js-search-form[data-id="5"]'),
-  listEl: document.querySelector('.js-pokemon-list'),
-};
+const formEl = document.querySelector('.js-search-form[data-id="5"]');
+const infoEl = document.querySelector('.js-pokemon-list');
 
-refs.formEl.addEventListener('submit', onFormElSubmit);
-function onFormElSubmit(event) {
+formEl.addEventListener('submit', onFormSubmit);
+
+function onFormSubmit(event) {
   event.preventDefault();
-  const value = refs.formEl.elements.query.value;
-  getPokemon(value).then(renderPokemon);
-}
-
-function getPokemon(value) {
-  const url = `https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`;
-  return fetch(url).then(res => {
-    return res.json();
+  const pokemonName = event.target.elements.query.value;
+  getPokemon(pokemonName).then(data => {
+    infoEl.insertAdjacentHTML('afterbegin', pokemonTemplate(data));
   });
 }
+function getPokemon(pokemon) {
+  const BASE_URL = 'https://pokeapi.co';
+  const END_POINT = '/api/v2/pokemon';
+  const PARAMS = `/${pokemon}`;
+  const url = BASE_URL + END_POINT + PARAMS;
+  return fetch(url).then(res => res.json());
+}
 
-function renderPokemon({
-  height,
-  weight,
-  id,
-  name,
-  base_experience,
-  sprites: { front_default, back_default },
-}) {
-  const markup = `<div class="pokemon-card pokemon-item">
+function pokemonTemplate(pokemon) {
+  const {
+    name,
+    sprites: { back_default, front_default },
+    id,
+    height,
+    weight,
+    base_experience,
+  } = pokemon;
+  return `
+  <div class="pokemon-card pokemon-item">
   <h1 class="pokemon-name">${name} - Pokemon Details</h1>
   <img data-back="${back_default}" data-front="${front_default}"
     class="pokemon-image js-pocimage"
@@ -41,5 +44,4 @@ function renderPokemon({
     <li>Base Experience: ${base_experience}</li>
   </ul>
 </div>`;
-  refs.listEl.insertAdjacentHTML('beforeend', markup);
 }
