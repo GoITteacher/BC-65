@@ -1,75 +1,76 @@
-import { NewsAPI } from './modules/newsApi';
-
-const newsApi = new NewsAPI();
-let maxPage = 1;
+import { NewsAPI } from './modules/newsAPI';
 
 const refs = {
-  formElem: document.querySelector('.js-search-form'),
-  articleListElem: document.querySelector('.js-article-list'),
-  btnLoadMore: document.querySelector('.js-btn-load'),
+  formEl: document.querySelector('.js-search-form'),
+  containerEl: document.querySelector('.js-article-list'),
+  loadMoreBtnEl: document.querySelector('.js-btn-load'),
 };
 
-refs.formElem.addEventListener('submit', onFormSubmit);
-refs.btnLoadMore.addEventListener('click', onLoadMoreClick);
+refs.formEl.addEventListener('submit', onFormElSubmit);
+refs.loadMoreBtnEl.addEventListener('click', onLoadMoreBtnClick);
 
-function onFormSubmit(e) {
+const newsAPI = new NewsAPI();
+
+function onLoadMoreBtnClick() {
+  newsAPI.page += 1;
+
+  newsAPI.fetchNews().then(res => {
+    renderMarkup(res.articles);
+  });
+
+  updateStatusLoadMore();
+}
+
+function onFormElSubmit(e) {
   e.preventDefault();
-  const query = e.target.elements.query.value;
-  newsApi.query = query;
-  newsApi.page = 1;
-  newsApi.getArticles().then(data => {
-    maxPage = Math.ceil(data.totalResults / newsApi.pageSize);
-    refs.articleListElem.innerHTML = '';
-    renderArticles(data.articles);
-    refs.btnLoadMore.disabled = false;
-    updateStatusBtn();
+  const userValue = e.target.elements.query.value;
+
+  newsAPI.q = userValue;
+  newsAPI.page = 1;
+
+  newsAPI.fetchNews().then(res => {
+    newsAPI.totalPage = Math.ceil(res.totalResults / NewsAPI.PAGE_SIZE);
+
+    refs.containerEl.innerHTML = '';
+    renderMarkup(res.articles);
+    refs.loadMoreBtnEl.disabled = false;
+    updateStatusLoadMore();
   });
 }
 
-function onLoadMoreClick(e) {
-  newsApi.page += 1;
-  newsApi.getArticles().then(data => {
-    renderArticles(data.articles);
-    updateStatusBtn();
-  });
+function templateArticle(
+  { urlToImage, title, description, author, publishedAt },
+  index,
+) {
+  return `<li class="card news-card" data-i="${index}">
+<img loading="lazy"
+  class="news-image"
+  src="${urlToImage}"
+  alt="${title}"
+/>
+<h3 class="card-title">
+  ${title}
+</h3>
+<p class="card-desc">
+${description}
+</p>
+<div class="card-footer">
+  <span>${author}</span>
+  <span>${publishedAt}</span>
+</div>
+</li>`;
 }
 
-function updateStatusBtn() {
-  if (newsApi.page === maxPage) {
-    refs.btnLoadMore.disabled = true;
-  }
+function templateArticles(articles) {
+  const template = articles.map(templateArticle).join('');
+  return template;
 }
 
-function templateArticle({
-  author,
-  title,
-  description,
-  content,
-  urlToImage,
-  publishedAt,
-}) {
-  return `
-  <li class="card news-card">
-        <img loading="lazy"
-          class="news-image"
-          src="${urlToImage}"
-          alt="${title}"
-        />
-        <h3 class="card-title">
-          ${title}
-        </h3>
-        <p class="card-desc">
-        ${description}
-        </p>
-        <div class="card-footer">
-          <span>${author}</span>
-          <span>${publishedAt}</span>
-        </div>
-      </li>`;
+function renderMarkup(articles) {
+  const markup = templateArticles(articles);
+  refs.containerEl.insertAdjacentHTML('beforeend', markup);
 }
 
-function renderArticles(articles) {
-  const markup = articles.map(templateArticle).join('');
-  // refs.articleListElem.innerHTML = markup;
-  refs.articleListElem.insertAdjacentHTML('beforeend', markup);
+function updateStatusLoadMore() {
+  refs.loadMoreBtnEl.disabled = newsAPI.page >= newsAPI.totalPage;
 }
