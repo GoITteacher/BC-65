@@ -11,11 +11,48 @@ const refs = {
 
 const booksAPI = new BookAPI();
 
-function bookTemplate(book) {
-  return `<li data-id="${book.id}" class="card articles">
-  <h1>${book.title}</h1>
-  <p>${book.desc}</p>
-  <p>${book.author}</p>
+refs.createFormEL.addEventListener('submit', onCreateFormSubmit);
+function onCreateFormSubmit(e) {
+  e.preventDefault();
+  const title = e.target.elements.bookTitle.value;
+  const author = e.target.elements.bookAuthor.value;
+  const desc = e.target.elements.bookDesc.value;
+  const book = {
+    title,
+    author,
+    desc,
+  };
+
+  booksAPI.createBook(book).then(newBook => {
+    const markup = bookTemplate(newBook);
+    refs.bookListEl.insertAdjacentHTML('afterbegin', markup);
+  });
+}
+
+refs.resetFormEL.addEventListener('submit', onResetFormSubmit);
+
+function onResetFormSubmit(e) {
+  e.preventDefault();
+  const book = {};
+  const formData = new FormData(e.target);
+  formData.forEach((value, key) => {
+    key = key.toLowerCase().replace('book', '');
+    book[key] = value;
+  });
+
+  booksAPI.resetBook(book).then(updatedBook => {
+    const markup = bookTemplate(updatedBook);
+    const oldBookEl = document.querySelector(`[data-id="${book.id}"]`);
+    oldBookEl.insertAdjacentHTML('afterend', markup);
+    oldBookEl.remove();
+  });
+}
+
+function bookTemplate({ id, title, desc, author }) {
+  return `<li class="card book-item" data-id="${id}">
+  <h4>${id} - ${title}</h4>
+  <p>${desc}</p>
+  <p>${author}</p>
 </li>`;
 }
 
@@ -31,7 +68,7 @@ function renderBooks(bookArr) {
 booksAPI
   .getBooks()
   .then(res => {
-    renderBooks(res);
+    renderBooks(res.reverse());
   })
   .catch(err => {
     console.log(err);

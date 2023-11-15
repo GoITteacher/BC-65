@@ -11,8 +11,18 @@ export class BookAPI {
       .then(res => res.data)
       .catch(err => console.log(err));
   }
-  createBook() {}
+  createBook(book) {
+    return axiosV2
+      .post('/books', book)
+      .then(res => res.data)
+      .catch(err => console.log(err));
+  }
   updateBook() {}
-  resetBook() {}
+  resetBook({ id, ...book }) {
+    return axiosV2
+      .patch(`/books/${id}`, book)
+      .then(res => res.data)
+      .catch(err => console.log(err));
+  }
   deleteBook() {}
 }
