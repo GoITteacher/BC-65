@@ -65,7 +65,13 @@
       </form>
     </div>
 
-    <ul class="news-list js-article-list"></ul>
+    <ul class="news-list js-article-list">
+      <li data-id="${book.id}" class="card articles">
+        <h1>${book.title}</h1>
+        <p>${book.desc}</p>
+        <p>${book.author}</p>
+      </li>
+    </ul>
 
     <button
       type="button"
